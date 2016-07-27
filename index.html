@@ -1,57 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<title>Arena</title>
-	<meta charset="utf-8">
-	<meta name="Arena" content="fight">
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<link rel="stylesheet" href="./jQuery UI Sortable - Default functionality_files/jquery-ui.css">
-	<link rel="stylesheet" href="./jQuery UI Sortable - Default functionality_files/style.css">
-	<script src="./jQuery UI Sortable - Default functionality_files/jquery-1.12.4.js"></script>
-	<script src="./jQuery UI Sortable - Default functionality_files/jquery-ui.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-	<script type="text/javascript">
-		
-
-	</script>
-</head>
-<body>
-
-	<div id="container">
-		
-		<div id="selectArena">
-			<h2>Select Arena</h2>
-			<button id="beach">Beach</button>
-			<button id="planet">Planet</button>
-			<button id="dojo">Dojo</button>
-			<button id="forest">Forest</button>
-			<button id="matrix">Matrix</button>
-			<button id="snow">Snow</button>
+	<head>
+		<title>Arena</title>
+		<meta charset="utf-8">
+		<meta name="Arena" content="fight">
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
+		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	 	<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('button').click(function(event){
+					event.stopPropagation();
+					$('#container').css('background-image', $(this).val());
+				});
+				$('button').hover(function(event){
+					event.stopPropagation();
+					$('#container').css('background-image', $(this).val());
+					},
+					function(event) {
+						event.stopPropagation();
+						$('#container').css('background-image', "url(black.jpg");
+				});	
+			});
+		</script>
+	</head>
+	<body>
+		<div id="container">
+			<div id="selectArena">
+				<h2>Select Arena</h2>
+				<button id="beach" value="url(beach.jpg)">Beach</button>
+				<button id="planet" value="url(earth.jpg)">Planet</button>
+				<button id="dojo" value="url(dojo.jpg)">Dojo</button>
+				<button id="forest" value="url(forest.jpg)">Forest</button>
+				<button id="matrix" value="url(matrix.jpg)">Matrix</button>
+				<button id="snow" value="url(snow.jpg)">Snow</button>
+			</div>
+			<div id="selectFighter">
+				<h2>Select Players</h2>
+				<form action="#">
+					<fieldset>
+						<select id="fighter1">
+							<option selected="selected">Select Ninja</option>					
+							<option value="leo">Leo</option>
+							<option >Mikey</option>
+							<option>Raphael</option>
+							<option>Donny</option>
+						</select>
+						<select id="fighter2">
+							<option selected="selected">Select Ninja</option>
+							<option>Leo</option>
+							<option>Mikey</option>
+							<option>Raphael</option>
+							<option>Donny</option>
+						</select>
+					</fieldset>
+				</form>
+				<img src="">
+				<img src="">
+			</div>
 		</div>
-		<div id="selectFighter">
-			<h2>Select Players</h2>
-			<form action="#">
-				<fieldset>
-					<select id="fighter1">
-						<option selected="selected">Select Ninja</option>					
-						<option value="leo">Leo</option>
-						<option >Mikey</option>
-						<option>Raphael</option>
-						<option>Donny</option>
-					</select>
-					<select id="fighter2">
-						<option selected="selected">Select Ninja</option>
-						<option>Leo</option>
-						<option>Mikey</option>
-						<option>Raphael</option>
-						<option>Donny</option>
-					</select>
-				</fieldset>
-			</form>
-			<img src="">
-			<img src="">
-		</div>
-	</div>
-
-</body>
+	</body>
 </html>

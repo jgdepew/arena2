@@ -1,0 +1,51 @@
+*{
+	padding: 0px;
+	margin: 0px;
+	color: orange;
+}
+
+#container{
+	border: solid 5px darkgrey;
+	background-image: url("black.jpg");
+	background-size: cover;
+	width: 1240px;
+	height: 690px;
+}
+
+#selectArena{
+	border-radius: 5px;
+	border: solid 5px darkgrey;
+	width: 250px;
+	height: 100px;
+	align-items: center;
+	background-color: lightgray;
+	margin: 290px 475px;
+}
+
+#selectFighter{
+	border-radius: 5px;
+	border: solid 5px darkgrey;
+	width: 250px;
+	height: 100px;
+	align-items: center;
+	background-color: lightgray;
+	margin: 290px 475px;
+}
+
+button{
+	display: inline-block;
+	vertical-align: top;
+	padding: 10px;
+	color: black;
+	width: 70px;
+	height: 30px;
+	margin: 3px 3px 3px 3px;
+}
+
+h2{
+	text-align: center;
+	text-shadow: 2px;
+	text-shadow-color: white;
+	font-family: arial;
+	padding; 10px 0px;
+}
