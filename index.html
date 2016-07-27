@@ -5,15 +5,18 @@
 		<meta charset="utf-8">
 		<meta name="Arena" content="fight">
 		<link rel="stylesheet" type="text/css" href="style.css">
-		<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
-		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-	 	<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+
 		<script type="text/javascript">
 			$(document).ready(function(){
 				$('button').click(function(event){
 					event.stopPropagation();
 					$('#container').css('background-image', $(this).val());
+					var div2 = '<div id="selectFighter" class="centerdiv"><h2>Select Players</h2><form action="#"><fieldset><select id="fighter1"><option selected="selected">Select Ninja</option><option class="leo" value="leo">Leo</option><option class="mikey" value="mikey">Mikey</option><option class="raphael" value="raphael">Raphael</option><option class="donny" value="donny">Donny</option></select><select id="fighter2"><option selected="selected">Select Ninja</option><option class="leo" value="leo">Leo</option><option class="mikey" value="mikey">Mikey</option><option class="raphael" value="raphael">Raphael</option><option class="donny" value="donny">Donny</option></select></fieldset></form></div>';
+				$('#selectArena').replaceWith(div2);
 				});
 				$('button').hover(function(event){
 					event.stopPropagation();
@@ -24,6 +27,20 @@
 						$('#container').css('background-image', "url(black.jpg");
 				});	
 			});
+			$(document).on('click', '#fighter1', function(){
+				alert("stage1");
+				$("#container").append('<img src="leo.png">')
+				// $("#container").selectmenu().append('<img src="leo.png">');
+					// $("#container").append('<img src="leo.png">');
+					// alert("stage2");
+			})
+			$(document).on('click', '#fighter2', function(){
+				alert("stage1");
+				$("#container").append('<img src="leo.png">')
+				// $("#container").selectmenu().append('<img src="leo.png">');
+					// $("#container").append('<img src="leo.png">');
+					// alert("stage2");
+			})
 		</script>
 	</head>
 	<body>
@@ -37,29 +54,27 @@
 				<button id="matrix" value="url(matrix.jpg)">Matrix</button>
 				<button id="snow" value="url(snow.jpg)">Snow</button>
 			</div>
-			<div id="selectFighter">
+<!-- 			<div id="selectFighter" class="centerdiv">
 				<h2>Select Players</h2>
 				<form action="#">
 					<fieldset>
 						<select id="fighter1">
 							<option selected="selected">Select Ninja</option>					
-							<option value="leo">Leo</option>
-							<option >Mikey</option>
-							<option>Raphael</option>
-							<option>Donny</option>
+							<option class="leo" value="leo">Leo</option>
+							<option class="mikey" value="mikey">Mikey</option>
+							<option class="raphael" value="raphael">Raphael</option>
+							<option class="donny" value="donny">Donny</option>
 						</select>
 						<select id="fighter2">
 							<option selected="selected">Select Ninja</option>
-							<option>Leo</option>
-							<option>Mikey</option>
-							<option>Raphael</option>
-							<option>Donny</option>
+							<option class="leo" value="leo">Leo</option>
+							<option class="mikey" value="mikey">Mikey</option>
+							<option class="raphael" value="raphael">Raphael</option>
+							<option class="donny" value="donny">Donny</option>
 						</select>
 					</fieldset>
 				</form>
-				<img src="">
-				<img src="">
-			</div>
+			</div> -->
 		</div>
 	</body>
 </html>
