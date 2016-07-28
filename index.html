@@ -15,7 +15,7 @@
 				$('button').click(function(event){
 					event.stopPropagation();
 					$('#container').css('background-image', $(this).val());
-					var div2 = '<div id="selectFighter" class="centerdiv"><h2>Select Players</h2><form action="#"><fieldset><select id="fighter1"><option selected="selected">Select Ninja</option><option class="leo" value="leo">Leo</option><option class="mikey" value="mikey">Mikey</option><option class="raphael" value="raphael">Raphael</option><option class="donny" value="donny">Donny</option></select><select id="fighter2"><option selected="selected">Select Ninja</option><option class="leo" value="leo">Leo</option><option class="mikey" value="mikey">Mikey</option><option class="raphael" value="raphael">Raphael</option><option class="donny" value="donny">Donny</option></select></fieldset></form></div>';
+					var div2 = '<div id="selectFighter" class="centerdiv"><h2>Select Players</h2><form action="#"><fieldset><select id="fighter1"><option value="empty" selected="selected">Select Ninja</option><option class="leo" value="url(leo.png)">Leo</option><option class="mikey" value="url(mikey.png)">Mikey</option><option class="raphael" value="url(raphael.png)">Raphael</option><option class="donny" value="url(donny.png)">Donny</option></select><select id="fighter2"><option value="empty" selected="selected">Select Ninja</option><option class="leo" value="url(leo.png)">Leo</option><option class="mikey" value="url(mikey.png)">Mikey</option><option class="raphael" value="url(raphael.png)">Raphael</option><option class="donny" value="url(donny.png)">Donny</option></select></fieldset></form></div>';
 				$('#selectArena').replaceWith(div2);
 				});
 				$('button').hover(function(event){
@@ -24,22 +24,42 @@
 					},
 					function(event) {
 						event.stopPropagation();
-						$('#container').css('background-image', "url(black.jpg");
+						$('#container').css('background-image', "url(black.jpg)");
 				});	
 			});
-			$(document).on('click', '#fighter1', function(){
-				alert("stage1");
-				$("#container").append('<img src="leo.png">')
-				// $("#container").selectmenu().append('<img src="leo.png">');
-					// $("#container").append('<img src="leo.png">');
-					// alert("stage2");
+			$(document).on('change', '#fighter1', function(){
+				if($(this).val() == 'empty') {
+					$("#leftFighter").css('background-image', 'none');	
+				}
+				if($(this).val() == 'url(leo.png)') {
+					$("#leftFighter").css('background-image', 'url(leo.png)');	
+				}
+				if($(this).val() == 'url(mikey.png)') {
+					$("#leftFighter").css('background-image', 'url(mikey.png)');		
+				}
+				if($(this).val() == 'url(raphael.png)') {
+					$("#leftFighter").css('background-image', 'url(raphael.png)');		
+				}
+				if($(this).val() == 'url(donny.png)') {
+					$("#leftFighter").css('background-image', 'url(donny.png)');	
+				}
 			})
-			$(document).on('click', '#fighter2', function(){
-				alert("stage1");
-				$("#container").append('<img src="leo.png">')
-				// $("#container").selectmenu().append('<img src="leo.png">');
-					// $("#container").append('<img src="leo.png">');
-					// alert("stage2");
+			$(document).on('change', '#fighter2', function(){
+				if($(this).val() == 'empty') {
+					$("#rightFighter").css('background-image', 'none');	
+				}
+				if($(this).val() == 'url(leo.png)') {
+					$("#rightFighter").css('background-image', 'url(leo.png)');	
+				}
+				if($(this).val() == 'url(mikey.png)') {
+					$("#rightFighter").css('background-image', 'url(mikey.png)');		
+				}
+				if($(this).val() == 'url(raphael.png)') {
+					$("#rightFighter").css('background-image', 'url(raphael.png)');		
+				}
+				if($(this).val() == 'url(donny.png)') {
+					$("#rightFighter").css('background-image', 'url(donny.png)');	
+				}
 			})
 		</script>
 	</head>
@@ -54,23 +74,25 @@
 				<button id="matrix" value="url(matrix.jpg)">Matrix</button>
 				<button id="snow" value="url(snow.jpg)">Snow</button>
 			</div>
-<!-- 			<div id="selectFighter" class="centerdiv">
+			<div id="leftFighter"></div>
+			<div id="rightFighter"></div>
+			<!-- <div id="selectFighter" class="centerdiv">
 				<h2>Select Players</h2>
 				<form action="#">
 					<fieldset>
 						<select id="fighter1">
 							<option selected="selected">Select Ninja</option>					
-							<option class="leo" value="leo">Leo</option>
-							<option class="mikey" value="mikey">Mikey</option>
-							<option class="raphael" value="raphael">Raphael</option>
-							<option class="donny" value="donny">Donny</option>
+							<option class="leo" value="leo.png">Leo</option>
+							<option class="mikey" value="mikey.png">Mikey</option>
+							<option class="raphael" value="raphael.png">Raphael</option>
+							<option class="donny" value="donny.png">Donny</option>
 						</select>
 						<select id="fighter2">
 							<option selected="selected">Select Ninja</option>
-							<option class="leo" value="leo">Leo</option>
-							<option class="mikey" value="mikey">Mikey</option>
-							<option class="raphael" value="raphael">Raphael</option>
-							<option class="donny" value="donny">Donny</option>
+							<option class="leo" value="leo.png">Leo</option>
+							<option class="mikey" value="mikey.png">Mikey</option>
+							<option class="raphael" value="raphael.png">Raphael</option>
+							<option class="donny" value="donny.png">Donny</option>
 						</select>
 					</fieldset>
 				</form>

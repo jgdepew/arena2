@@ -9,7 +9,7 @@
 	background-image: url("black.jpg");
 	background-size: cover;
 	width: 1240px;
-	height: 690px;
+	height: 1000px;
 }
 
 #selectArena{
@@ -20,6 +20,8 @@
 	align-items: center;
 	background-color: lightgray;
 	margin: 290px 475px;
+	position: absolute;
+	padding: 10px;
 }
 
 #selectFighter{
@@ -30,6 +32,8 @@
 	align-items: center;
 	background-color: lightgray;
 	margin: 290px 475px;
+	position: absolute;
+	padding: 10px;
 }
 
 button{
@@ -48,4 +52,35 @@ h2{
 	text-shadow-color: white;
 	font-family: arial;
 	padding; 10px 0px;
+}
+
+#leftFighter {
+	margin-top: 200px;
+	margin-left: 75px;
+	width: 400px;
+	height: 600px;
+	bottom: 10px;
+	display: inline-block;
+	vertical-align: bottom;
+	background-repeat: no-repeat;
+}
+#rightFighter {
+	margin-top: 200px;
+	width: 400px;
+	height: 600px;
+	bottom: 10px;
+	display: inline-block;
+	vertical-align: bottom;
+	float: right;
+	background-repeat: no-repeat;
+}
+#fighter1 {
+	margin: 10px;
+	margin-left: 20px;
+}
+#figher2 {
+	margin: 10px;
+}
+fieldset {
+	border: none;
 }
